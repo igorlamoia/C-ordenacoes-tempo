@@ -19,6 +19,8 @@ void merge(int vetor[], int tamanho);
 void mergeSort(int vetor[], int tamanho);
 void imprimir(int vetor[], int tamanho);
 
+// gustavo
+
 int main()
 {
   char opcao[2];
