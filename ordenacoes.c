@@ -19,7 +19,7 @@ void merge(int vetor[], int tamanho);
 void mergeSort(int vetor[], int tamanho);
 void imprimir(int vetor[], int tamanho);
 
-// test
+// teste
 
 int main()
 {
