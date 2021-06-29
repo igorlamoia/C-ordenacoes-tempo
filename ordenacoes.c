@@ -18,24 +18,36 @@ void quickSort(int vetor[], int inicio, int fim);
 void merge(int vetor[], int tamanho);
 void mergeSort(int vetor[], int tamanho);
 void imprimir(int vetor[], int tamanho);
-
-// teste
+//<- FUNCOES PARA HEAP SORT ->
+void trocar(int *heap, int i, int j);
+void maxHeapify(int *heap, int tamanho, int i);
+void criarMaxHeap(int *heap, int tamanho);
+void heapSort(int *heap, int tamanho);
 
 int main()
 {
   char opcao[2];
-  int i, vetor[TAM];
+  int vetor[TAM];
 
-  menuOrdenacao();
-  gets(opcao);
-  escolherOrdenacao(opcao, vetor);
-  // imprimir(vetor, TAM);
+  do
+  {
+    menuOrdenacao();
+    printf("\t\t\t");
+    gets(opcao);
 
-  menuMetodo();
-  gets(opcao);
-  escolherMetodo(opcao, vetor);
+    if (opcao[0] == '7')
+      exit(0); // Forçando saída do programa
 
-  // imprimir(vetor, TAM);
+    escolherOrdenacao(opcao, vetor);
+    imprimir(vetor, TAM);
+
+    menuMetodo();
+    printf("\t\t\t");
+    gets(opcao);
+    escolherMetodo(opcao, vetor);
+    imprimir(vetor, TAM);
+
+  } while (opcao[0] != '7');
 
   return 0;
 }
@@ -44,23 +56,30 @@ int main()
 void menuOrdenacao()
 {
   printf("\n");
-  printf("\t\t\t --  Ordenacao  --\n");
+  printf("\t\t\t ----------------- \n");
+  printf("\t\t\t|    Ordenacao    |\n");
+  printf("\t\t\t|-----------------|\n");
   printf("\t\t\t| 1-Aleatoria     |\n");
   printf("\t\t\t| 2-Crescente     |\n");
   printf("\t\t\t| 3-Decrescente   |\n");
   printf("\t\t\t -----------------\n");
+  printf("\n\t\t\t Digite 7 para sair\n");
 }
 
 // Mini interface para Métodos
 void menuMetodo()
 {
-  printf("\t\t\t ----  Metodo ----\n");
+  printf("\t\t\t ----------------- \n");
+  printf("\t\t\t|  Metodos Sort   |\n");
+  printf("\t\t\t|-----------------|\n");
   printf("\t\t\t| 1-Bubble        |\n");
   printf("\t\t\t| 2-Selection     |\n");
   printf("\t\t\t| 3-Insert        |\n");
   printf("\t\t\t| 4-Quick         |\n");
   printf("\t\t\t| 5-Merge         |\n");
+  printf("\t\t\t| 6-Heap          |\n");
   printf("\t\t\t -----------------\n");
+  printf("\n\t\t\t Digite 7 para sair\n");
 }
 
 // Escolha do menuMetodo
@@ -75,35 +94,45 @@ void escolherMetodo(char opcao[], int vetor[])
     bubbleSort(vetor, TAM);
     stop = (double)clock() / CLOCKS_PER_SEC;
     elapsed = stop - start;
-    printf("\n\n\nTempo total em segundos: %f\n\n\n", elapsed);
+    printf("\n\n\t\t\tTempo total em segundos: %f\n\n\n", elapsed);
     break;
   case '2':
     start = (double)clock() / CLOCKS_PER_SEC;
     selectionSort(vetor, TAM);
     stop = (double)clock() / CLOCKS_PER_SEC;
     elapsed = stop - start;
-    printf("\n\n\nTempo total em segundos: %f\n\n\n", elapsed);
+    printf("\n\n\t\t\tTempo total em segundos: %f\n\n\n", elapsed);
     break;
   case '3':
     start = (double)clock() / CLOCKS_PER_SEC;
     insertionSort(vetor, TAM);
     stop = (double)clock() / CLOCKS_PER_SEC;
     elapsed = stop - start;
-    printf("\n\n\nTempo total em segundos: %f\n\n\n", elapsed);
+    printf("\n\n\t\t\tTempo total em segundos: %f\n\n\n", elapsed);
     break;
   case '4':
     start = (double)clock() / CLOCKS_PER_SEC;
     quickSort(vetor, 0, TAM);
     stop = (double)clock() / CLOCKS_PER_SEC;
     elapsed = stop - start;
-    printf("\n\n\nTempo total em segundos: %f\n\n\n", elapsed);
+    printf("\n\n\t\t\tTempo total em segundos: %f\n\n\n", elapsed);
     break;
   case '5':
     start = (double)clock() / CLOCKS_PER_SEC;
     mergeSort(vetor, TAM);
     stop = (double)clock() / CLOCKS_PER_SEC;
     elapsed = stop - start;
-    printf("\n\n\nTempo total em segundos: %f\n\n\n", elapsed);
+    printf("\n\n\t\t\tTempo total em segundos: %f\n\n\n", elapsed);
+    break;
+  case '6':
+    start = (double)clock() / CLOCKS_PER_SEC;
+    heapSort(vetor, TAM);
+    stop = (double)clock() / CLOCKS_PER_SEC;
+    elapsed = stop - start;
+    printf("\n\n\t\t\tTempo total em segundos: %f\n\n\n", elapsed);
+    break;
+  default:
+    printf("\n\n\t\t\tMetodo incompativel\n");
     break;
   }
 }
@@ -123,6 +152,7 @@ void escolherOrdenacao(char opcao[], int vetor[])
     inicializarOrdemDecrescente(vetor, TAM);
     break;
   default:
+    printf("\n\n\t\t\tOrdenacao inexistente\n");
     break;
   }
 }
@@ -308,7 +338,58 @@ void mergeSort(int vetor[], int tamanho)
 void imprimir(int vetor[], int tamanho)
 {
   int contador;
+  printf("\n\t\t\t");
   for (contador = 0; contador < tamanho; contador++)
     printf("%d  ", vetor[contador]);
   printf("\n");
+}
+
+void trocar(int *heap, int i, int j)
+{
+  int aux;
+
+  aux = heap[i];
+  heap[i] = heap[j];
+  heap[j] = aux;
+}
+
+void maxHeapify(int *heap, int tamanho, int i)
+{
+  int maior = i;
+  int esquerda = (2 * i) + 1;
+  int direita = (2 * i) + 2;
+
+  if (esquerda < tamanho && heap[esquerda] > heap[maior])
+    maior = esquerda;
+
+  if (direita < tamanho && heap[direita] > heap[maior])
+    maior = direita;
+
+  if (maior != i)
+  {
+    trocar(heap, i, maior);
+
+    maxHeapify(heap, tamanho, maior);
+  }
+}
+
+void criarMaxHeap(int *heap, int tamanho)
+{
+  int i;
+
+  for (i = (tamanho / 2) - 1; i >= 0; i--)
+    maxHeapify(heap, tamanho, i);
+}
+
+void heapSort(int *heap, int tamanho)
+{
+  criarMaxHeap(heap, tamanho);
+
+  int i;
+
+  for (i = tamanho - 1; i > 0; i--)
+  {
+    trocar(heap, 0, i);
+    maxHeapify(heap, i, 0);
+  }
 }
