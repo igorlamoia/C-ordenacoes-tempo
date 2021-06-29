@@ -35,7 +35,7 @@ int main()
     printf("\t\t\t");
     gets(opcao);
 
-    if (opcao[0] == '7')
+    if (opcao[0] == '4')
       exit(0); // Forçando saída do programa
 
     escolherOrdenacao(opcao, vetor);
@@ -63,7 +63,7 @@ void menuOrdenacao()
   printf("\t\t\t| 2-Crescente     |\n");
   printf("\t\t\t| 3-Decrescente   |\n");
   printf("\t\t\t -----------------\n");
-  printf("\n\t\t\t Digite 7 para sair\n");
+  printf("\n\t\t\t Digite 4 para sair\n");
 }
 
 // Mini interface para Métodos
