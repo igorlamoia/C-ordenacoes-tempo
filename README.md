@@ -8,5 +8,21 @@ Programa calcula o tempo dos principais métodos de ordenações em C.
 ## Objetivo :bookmark_tabs:
  Sabemos que o tempo varia de acordo com a máquina, porém a comparação nos dá uma ideia da eficiência/custo de cada método.
 
-## Métodos:
-![Image declaracoes](https://github.com/igorlamoia/C-ordenacoes-tempo/blob/main/images/ordenacao.png)
+## Métodos
+![Image declaracoes](https://github.com/igorlamoia/C-ordenacoes-tempo/blob/main/images/metodos.png)
+
+
+## Main (separação)
+![Image declaracoes](https://github.com/igorlamoia/C-ordenacoes-tempo/blob/main/images/main.png)
+
+
+## Inicialização
+![Image declaracoes](https://github.com/igorlamoia/C-ordenacoes-tempo/blob/main/images/inicializacao.png)
+
+
+## Menu
+![Image declaracoes](https://github.com/igorlamoia/C-ordenacoes-tempo/blob/main/images/menu.png)
+
+
+## Escolha de Método e Ordenação
+![Image declaracoes](https://github.com/igorlamoia/C-ordenacoes-tempo/blob/main/images/escolhas.png)
