@@ -1,10 +1,9 @@
 #include <stdlib.h>
-#include "./bibliotecas/escolhas.c"
-#include "./bibliotecas/inicializacao.c"
-#include "./bibliotecas/menu.c"
-#include "./bibliotecas/metodosOrdenacao.c"
+#include "./bibliotecas/escolhas.c"            // Escolher métodos e ordenação inicial do vetor
+#include "./bibliotecas/inicializacao.c"      // Funções que irão inicializar o vetor de acordo com a escolha
+#include "./bibliotecas/menu.c"              // Mini interface para auxiliar nas escolhas
+#include "./bibliotecas/metodosOrdenacao.c" // Funções que, de fato, ordenarão o vetor
 
-// #define TAM 100000
 #define TAM 100000
 
 void imprimir(int vetor[], int tamanho);

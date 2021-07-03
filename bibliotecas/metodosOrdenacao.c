@@ -12,29 +12,20 @@ void maxHeapify(int *heap, int tamanho, int i);
 void criarMaxHeap(int *heap, int tamanho);
 void heapSort(int *heap, int tamanho);
 
-void trocar(int *heap, int i, int j)
-{
-  int aux;
-
-  aux = heap[i];
-  heap[i] = heap[j];
-  heap[j] = aux;
-}
-
 //Complexidade O(n2) -> Os maiores elementros "flutuam" para o topo
 void bubbleSort(int vetor[], int tamanho)
 {
-  int i, contador, auxiliar;
-
-  for (contador = 1; contador < tamanho; contador++)
+  int i, j;
+  for (i = tamanho - 1; i > 0; i--)
   {
-    for (i = 0; i < tamanho - 1; i++)
+    for (j = 0; j < i; j++)
     {
-      if (vetor[i] > vetor[i + 1])
+      if (vetor[j] > vetor[j + 1])
       {
-        auxiliar = vetor[i];
-        vetor[i] = vetor[i + 1];
-        vetor[i + 1] = auxiliar;
+        int auxiliar;
+        auxiliar = vetor[j];
+        vetor[j] = vetor[j + 1];
+        vetor[j + 1] = auxiliar;
       }
     }
   }
@@ -176,6 +167,15 @@ void mergeSort(int vetor[], int tamanho)
     mergeSort(vetor + mid, tamanho - mid);
     merge(vetor, tamanho);
   }
+}
+
+void trocar(int *heap, int i, int j)
+{
+  int aux;
+
+  aux = heap[i];
+  heap[i] = heap[j];
+  heap[j] = aux;
 }
 
 void maxHeapify(int *heap, int tamanho, int i)
