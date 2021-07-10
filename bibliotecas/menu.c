@@ -1,5 +1,4 @@
-void menuOrdenacao();
-void menuMetodo();
+#include <stdio.h>
 
 // Mini interface para Ordenação do Vetor
 void menuOrdenacao()

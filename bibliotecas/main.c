@@ -1,8 +1,7 @@
+#include <stdio.h>
 #include <stdlib.h>
-#include "./bibliotecas/escolhas.c"            // Escolher métodos e ordenação inicial do vetor
-#include "./bibliotecas/inicializacao.c"      // Funções que irão inicializar o vetor de acordo com a escolha
-#include "./bibliotecas/menu.c"              // Mini interface para auxiliar nas escolhas
-#include "./bibliotecas/metodosOrdenacao.c" // Funções que, de fato, ordenarão o vetor
+#include "escolhas.h" // Escolher métodos e ordenação inicial do vetor
+#include "menu.h"     // Mini interface para auxiliar nas escolhas
 
 #define TAM 100000
 
