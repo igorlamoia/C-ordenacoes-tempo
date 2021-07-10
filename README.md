@@ -9,12 +9,14 @@ Programa calcula o tempo dos principais métodos de ordenações em C.
 Realize o download de minGW: https://sourceforge.net/projects/mingw/
 
 Prossiga com a instalação. Após concluída, selecione mingw32-base e mingw32-gcc-g++ para instalar.
-![Image declaracoes](./images/setup-windows-1.png)
+
+![Image declaracoes](./images/setup-windows-1.PNG)
 
 Logo após vá em Installation > Apply Changes
 
-![Image declaracoes](./images/setup-windows-2.png)
-![Image declaracoes](./images/setup-windows-3.png)
+![Image declaracoes](./images/setup-windows-2.PNG)
+
+![Image declaracoes](./images/setup-windows-3.PNG)
 
 
 Para adicionar gcc como variável de ambiente, vá em Meu Computador > Propriedades.
@@ -23,7 +25,7 @@ Depois vá em Configurações avançadas do sistema > Variáveis de Ambiente.
 
 Ache a variável Path e clique em Editar.
 
-Clique em novo e adicione o diretório dos binários que foram instalados com o MinGW (geralmente em C:\MinGW\bin)
+Clique em Novo... e adicione o diretório dos binários que foram instalados com o MinGW (geralmente em C:\MinGW\bin)
 
 Para conferir que a variável foi adicionada, reinicie seu terminal e execute o comando gcc.
 
