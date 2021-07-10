@@ -1,0 +1,2 @@
+void menuOrdenacao();
+void menuMetodo();

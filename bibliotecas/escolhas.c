@@ -1,6 +1,8 @@
+#include <stdio.h>
 #include <time.h>
-void escolherOrdenacao(char opcao[], int vetor[], int TAM);
-void escolherMetodo(char opcao[], int vetor[], int TAM);
+#include <stdlib.h>
+#include "metodosOrdenacao.h"
+#include "inicializacao.h"
 
 // Escolha do menuMetodo
 void escolherMetodo(char opcao[], int vetor[], int TAM)

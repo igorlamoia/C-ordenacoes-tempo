@@ -1,1 +1,5 @@
 *.exe
+_objs/*
+build/*
+
+!.gitkeep
