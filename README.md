@@ -7,7 +7,10 @@ Programa calcula o tempo dos principais métodos de ordenações em C. Usamos o 
 ## Objetivo :bookmark_tabs:
  Sabemos que o tempo varia de acordo com a máquina, porém a comparação nos dá uma ideia da eficiência/custo de cada método.
  
- 
+ <p align="center">
+ <a href="#instalação">Instalação</a>&nbsp;&nbsp;&nbsp;
+</p>
+
  ## Métodos
 ![image](https://user-images.githubusercontent.com/62469164/124341548-82703800-db93-11eb-8336-7e350a728958.png) 
 
@@ -30,7 +33,9 @@ Programa calcula o tempo dos principais métodos de ordenações em C. Usamos o 
 
 ![Image declaracoes](./images/escolhas.png)
 
-## Instruções de Instalação - Windows 10
+
+# Instalação
+## Instruções - Windows 10
 
 Realize o download de minGW: https://sourceforge.net/projects/mingw/
 
